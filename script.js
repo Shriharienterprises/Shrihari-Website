@@ -1,69 +1,82 @@
 let cart = [];
 
 function addToCart(productName, price) {
-  const quantity = parseInt(prompt(`Enter quantity for ${productName}:`, 1));
+  const qtyInput = document.getElementById(`qty-${productName.replace(/\s+/g, "_")}`);
+  const quantity = parseInt(qtyInput.value);
   if (!isNaN(quantity) && quantity > 0) {
     cart.push({ productName, quantity, price });
-    alert(`${productName} (Qty: ${quantity}) added to cart.`);
-    updateCartPreview();
+    alert(`${productName} added to cart.`);
+    renderCart();
   }
 }
 
-function updateCartPreview() {
-  const preview = document.getElementById("cart-preview");
-  if (!preview) return;
+function renderCart() {
+  const cartSection = document.getElementById("cart-preview");
+  const checkoutForm = document.getElementById("checkout-form");
 
-  preview.innerHTML = "<h3>Your Cart:</h3>";
   if (cart.length === 0) {
-    preview.innerHTML += "<p>Cart is empty.</p>";
+    cartSection.innerHTML = "<p>Your cart is empty.</p>";
+    checkoutForm.style.display = "none";
     return;
   }
 
+  let cartHTML = "<h3>Your Cart</h3><ul>";
   let total = 0;
+
   cart.forEach((item, index) => {
-    preview.innerHTML += `<p>${index + 1}. ${item.productName} - Qty: ${item.quantity} - ₹${item.price}</p>`;
-    total += item.quantity * item.price;
+    cartHTML += `<li>${index + 1}. ${item.productName} - Qty: ${item.quantity} - ₹${item.price}</li>`;
+    total += item.price * item.quantity;
   });
-  preview.innerHTML += `<strong>Total Estimate: ₹${total}</strong>`;
+
+  cartHTML += `</ul><p><strong>Total Estimate: ₹${total}</strong></p>`;
+  cartSection.innerHTML = cartHTML;
+  checkoutForm.style.display = "block";
 }
 
-function openCheckoutForm() {
+function scrollToCart() {
+  const cartSection = document.getElementById("cart-preview");
+  if (cartSection) {
+    cartSection.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+function sendWhatsAppInquiry() {
   if (cart.length === 0) {
     alert("Cart is empty");
     return;
   }
-  document.getElementById("checkout-form").style.display = "block";
-  updateCartPreview();
-}
 
-function sendWhatsAppInquiry() {
   const name = document.getElementById("user-name").value.trim();
   const contact = document.getElementById("user-contact").value.trim();
   const messageText = document.getElementById("user-message").value.trim();
 
   if (!name || !contact) {
-    alert("Please fill in all fields.");
+    alert("Please enter your name and WhatsApp number.");
     return;
   }
 
-  let message = `New Inquiry from ${name} (${contact}):%0A`;
+  let message = "Hello, I'm interested in the following products:%0A";
   let total = 0;
 
   cart.forEach((item, index) => {
-    message += `${index + 1}. ${item.productName} - Qty: ${item.quantity} - ₹${item.price} each%0A`;
+    message += `${index + 1}. ${item.productName} - Qty: ${item.quantity} - Price: ₹${item.price}%0A`;
     total += item.quantity * item.price;
   });
 
-  message += `%0ATotal Estimate: ₹${total}`;
-  if (messageText) message += `%0AMessage: ${messageText}`;
+  message += `%0A---%0ATotal Estimate: ₹${total}%0A`;
+  message += `Name: ${name}%0AContact: ${contact}%0ARequirement: ${messageText}`;
 
   const phoneNumber = "917066335993";
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURI(message)}`;
-  window.open(url, '_blank');
+  const url = `https://wa.me/${phoneNumber}?text=${message}`;
+  window.open(url, "_blank");
 }
-function scrollToCart() {
-  const cartSection = document.getElementById("checkout-form");
-  if (cartSection) {
-    cartSection.scrollIntoView({ behavior: "smooth" });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const checkoutBtn = document.querySelector("button[onclick='scrollToCart()']");
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", () => {
+      renderCart();
+      document.getElementById("cart-preview").scrollIntoView({ behavior: "smooth" });
+    });
   }
-}
+});
