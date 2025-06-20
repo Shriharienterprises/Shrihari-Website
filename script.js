@@ -61,3 +61,9 @@ function sendWhatsAppInquiry() {
   const url = `https://wa.me/${phoneNumber}?text=${encodeURI(message)}`;
   window.open(url, '_blank');
 }
+function scrollToCart() {
+  const cartSection = document.getElementById("checkout-form");
+  if (cartSection) {
+    cartSection.scrollIntoView({ behavior: "smooth" });
+  }
+}
