@@ -32,9 +32,8 @@ function openCheckoutForm() {
     alert("Cart is empty");
     return;
   }
-
   document.getElementById("checkout-form").style.display = "block";
-  updateCartPreview(); // Refresh preview before form
+  updateCartPreview();
 }
 
 function sendWhatsAppInquiry() {
