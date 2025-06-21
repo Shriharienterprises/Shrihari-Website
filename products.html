@@ -3,31 +3,222 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products - Shri Hari Enterprise</title>
+  <title>Products</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Logo" class="logo" />
-    <h1 style="color: orange;">Shri Hari Enterprise</h1>
-    <nav>
-      <a href="index.html" class="btn">Home</a>
-      <button onclick="openCart()" class="btn">Cart</button>
-    </nav>
+    <a href="index.html">Home</a>
+    <h2>Our Products</h2>
+    <button onclick="openCart()">Checkout Cart</button>
   </header>
-  <main>
-    <section class="product-grid">
-      <!-- Example product card -->
-      <div class="product-card">
-        <h3>Reverse Horn</h3>
-        <p>₹165.00</p>
-        <input type="number" id="qty-Reverse Horn" placeholder="Qty" />
-        <button onclick="addToCart('Reverse Horn', 165)">Add to Cart</button>
-      </div>
-      <!-- More product cards would go here -->
-    </section>
-    <section id="cart-container" style="display:none;"></section>
+  <main class="product-grid">
+
+    <div class="product-card">
+      <h3>Reverse Horn</h3>
+      <p>₹165.0</p>
+      <button onclick="addToCart('Reverse Horn', 165.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>TT Horn</h3>
+      <p>₹410.0</p>
+      <button onclick="addToCart('TT Horn', 410.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Fuse Socket with wire</h3>
+      <p>₹45.0</p>
+      <button onclick="addToCart('Fuse Socket with wire', 45.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Tickly Wire</h3>
+      <p>₹4.2</p>
+      <button onclick="addToCart('Tickly Wire', 4.2)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Indicator Assly. Commet</h3>
+      <p>₹180.0</p>
+      <button onclick="addToCart('Indicator Assly. Commet', 180.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Indicator Assly. 2214</h3>
+      <p>₹145.0</p>
+      <button onclick="addToCart('Indicator Assly. 2214', 145.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Wiper Blade Push</h3>
+      <p>₹290.0</p>
+      <button onclick="addToCart('Wiper Blade Push', 290.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Wiper Arm Push</h3>
+      <p>₹305.0</p>
+      <button onclick="addToCart('Wiper Arm Push', 305.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Wiper Lock</h3>
+      <p>₹8.0</p>
+      <button onclick="addToCart('Wiper Lock', 8.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Wiper Motor</h3>
+      <p>₹1850.0</p>
+      <button onclick="addToCart('Wiper Motor', 185.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Wire Bundle</h3>
+      <p>₹490.0</p>
+      <button onclick="addToCart('Wire Bundle', 490.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Head Light Seal Beem</h3>
+      <p>₹200.0</p>
+      <button onclick="addToCart('Head Light Seal Beem', 200.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Head Light Inner Ring</h3>
+      <p>₹80.0</p>
+      <button onclick="addToCart('Head Light Inner Ring', 80.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Head Light Dom.</h3>
+      <p>₹435.0</p>
+      <button onclick="addToCart('Head Light Dom.', 435.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Sleeve (Wire Cover) 10MM - 100 Mtr</h3>
+      <p>₹465.0</p>
+      <button onclick="addToCart('Sleeve (Wire Cover) 10MM - 100 Mtr', 465.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Sleeve (Wire Cover) 12MM - 100 Mtr</h3>
+      <p>₹70.0</p>
+      <button onclick="addToCart('Sleeve (Wire Cover) 12MM - 100 Mtr', 70.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Battery Terminal</h3>
+      <p>₹12.0</p>
+      <button onclick="addToCart('Battery Terminal', 12.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Glow 2441 Bulb</h3>
+      <p>₹23.0</p>
+      <button onclick="addToCart('Glow 2441 Bulb', 23.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Kiran Light</h3>
+      <p>₹23.0</p>
+      <button onclick="addToCart('Kiran Light', 128.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Headlight Bulb</h3>
+      <p>₹85.0</p>
+      <button onclick="addToCart('Headlight Bulb', 85.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>TV Type Side Mirror</h3>
+      <p>₹182.0</p>
+      <button onclick="addToCart('TV Type Side Mirror', 182.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Beading Mirror</h3>
+      <p>₹240.0</p>
+      <button onclick="addToCart('Beading Mirror', 240.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Wiper Wheel Box</h3>
+      <p>₹65.0</p>
+      <button onclick="addToCart('Wiper Wheel Box', 65.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Micro Relay</h3>
+      <p>₹40.0</p>
+      <button onclick="addToCart('Micro Relay', 40.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Push Pull Switch</h3>
+      <p>₹120.0</p>
+      <button onclick="addToCart('Push Pull Switch', 120.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Arm Side Rod</h3>
+      <p>₹1850.0</p>
+      <button onclick="addToCart('Arm Side Rod', 1850.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Combination Switch</h3>
+      <p>₹700.0</p>
+      <button onclick="addToCart('Combination Switch', 700.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Disel Tank Cap</h3>
+      <p>₹200.0</p>
+      <button onclick="addToCart('Disel Tank Cap', 200.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Roof Lamp</h3>
+      <p>₹55.0</p>
+      <button onclick="addToCart('Roof Lamp', 55.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>3 Pin Holder</h3>
+      <p>₹2.5</p>
+      <button onclick="addToCart('3 Pin Holder', 2.5)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Fuse</h3>
+      <p>₹160.0</p>
+      <button onclick="addToCart('Fuse', 160.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Headlamp Relay</h3>
+      <p>₹95.0</p>
+      <button onclick="addToCart('Headlamp Relay', 95.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Music Flasher</h3>
+      <p>₹170.0</p>
+      <button onclick="addToCart('Music Flasher', 170.0)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <h3>Wiper Blade Bolt</h3>
+      <p>₹5.0</p>
+      <button onclick="addToCart('Wiper Blade Bolt', 5.0)">Add to Cart</button>
+    </div>
+    
   </main>
 </body>
 </html>
