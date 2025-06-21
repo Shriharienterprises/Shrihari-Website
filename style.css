@@ -1,105 +1,175 @@
-body.gradient-bg {
-  background: linear-gradient(to right, #f78e2c, #9fe9fc);
-  color: white;
-  font-family: 'Segoe UI', sans-serif;
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
+  color: white;
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  min-height: 100vh;
 }
 
-.header {
-  background-color: #fff;
-  color: #f78e2c;
-  padding: 10px;
+a {
+  text-decoration: none;
+  color: white;
+}
+
+header {
+  background-color: white;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo-title {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .logo {
+  width: 50px;
   height: 50px;
+  margin-right: 15px;
 }
 
-.header-title {
+.title {
   font-size: 24px;
-  font-weight: bold;
-  color: #f78e2c;
+  color: orange;
+  margin: 0;
 }
 
 .slogan {
-  font-size: 14px;
-  color: #4b006e;
-}
-.nav-box {
-  background-color: #ff9933;
-  padding: 10px 20px;
-  border-radius: 12px;
-  display: inline-block;
-  backdrop-filter: blur(4px);
-  box-shaddow:0 0 10px rgba(0,0,0,0,1);
-}
-.nav-link,#cart-button {
-  margin: 0 10px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+  color: #623bbe;
+  font-weight: 600;
+  margin: 5px 0 15px 0;
 }
 
-.about, .contact {
-  padding: 20px;
-}
-
-.product-grid {
+nav {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
+  gap: 10px;
+}
+
+.orange-btn {
+  background-color: orange;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.orange-btn:hover {
+  background-color: darkorange;
+}
+
+main {
   padding: 20px;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
 }
 
 .product-card {
-  background-color: white;
-  color: #333;
-  border: 2px solid #f78e2c;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid white;
   border-radius: 10px;
   padding: 15px;
-  width: 220px;
   text-align: center;
 }
 
 .product-card h3 {
-  margin: 0 0 10px 0;
+  color: white;
+}
+
+.product-card p {
+  color: white;
 }
 
 .product-card button {
-  background-color: #f78e2c;
+  margin-top: 10px;
+  background-color: orange;
+  color: white;
   border: none;
-  color: white;
-  padding: 10px 16px;
+  padding: 6px 12px;
+  border-radius: 4px;
   cursor: pointer;
-  border-radius: 6px;
 }
 
-.cart-block {
-  background-color: #ffffff20;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 10px;
+.product-card button:hover {
+  background-color: darkorange;
+}
+
+/* Sticky Cart Button */
+.sticky-cart {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: orange;
   color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: bounce 2s infinite;
+  z-index: 1000;
 }
 
-.cart-block input {
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.75);
+}
+
+.modal-content {
+  background-color: #222;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.modal-content input {
   width: 100%;
-  margin: 8px 0;
   padding: 10px;
+  margin: 8px 0;
   border-radius: 5px;
   border: none;
+  outline: none;
 }
 
-.cart-block button {
-  background-color: #ff6600;
+.close {
   color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
+  float: right;
+  font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+footer {
+  background-color: rgba(0,0,0,0.2);
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
 }
