@@ -4,84 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shri Hari Enterprises</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #9fe9fc, #ffffff);
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffffff, #f2f9ff);
       color: white;
     }
+
     header {
-      background: white;
-      text-align: center;
-      padding: 2rem 1rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 1rem 2rem;
+      border-bottom: 2px solid #f1f1f1;
     }
-    .logo {
-      font-size: 2rem;
-      font-weight: bold;
+
+    header img {
+      height: 50px;
+    }
+
+    header .brand {
+      font-size: 1.8rem;
       color: orange;
-    }
-    .slogan {
-      font-size: 1.2rem;
-      color: #623bbe;
-      margin-top: 0.5rem;
-    }
-    .nav-buttons {
-      margin-top: 1rem;
-    }
-    .nav-buttons a {
-      text-decoration: none;
-      background: orange;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 8px;
-      margin: 0 10px;
       font-weight: bold;
     }
-    .about-section {
-      background: #e96d00;
-      padding: 2rem;
+
+    .slogan {
+      text-align: center;
+      color: #623bbe;
+      font-size: 1.1rem;
+      margin-top: 0.3rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      background-color: orange;
       color: white;
-      font-size: 1rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: bold;
     }
-    .about-section h2 {
-      font-size: 1.5rem;
+
+    .about {
+      max-width: 800px;
+      margin: auto;
+      background: #2b2d42;
+      padding: 2rem;
+      border-radius: 15px;
+      color: white;
     }
-    .about-section p {
-      margin-top: 1rem;
-      line-height: 1.6;
+
+    .about h2 {
+      text-align: center;
+      color: #ffb703;
+    }
+
+    footer {
+      margin-top: 2rem;
+      background-color: #222;
+      color: #eee;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo">Shri Hari Enterprises</div>
-    <p class="slogan">Where reliability meets excellence</p>
-    <div class="nav-buttons">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-    </div>
+    <div class="brand">Shri Hari Enterprises</div>
+    <img src="logo.png" alt="Logo" />
   </header>
 
-  <section class="about-section">
+  <div class="slogan">Where reliability meets excellence</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+  </nav>
+
+  <section class="about">
     <h2>About Us</h2>
     <p>
-      At Shri Hari Enterprises, we pride ourselves on being a trusted name in the world of automotive electrical components and accessories.
-      With a commitment to quality, reliability, and affordability, we cater to commercial and passenger vehicle owners, fleet operators, and maintenance professionals across India.
+      At Shri Hari Enterprises, we pride ourselves on being a trusted name in the world of automotive electrical components and accessories. With a commitment to quality, reliability, and affordability, we cater to the evolving needs of commercial and passenger vehicle owners, fleet operators, and maintenance professionals across India.
     </p>
     <p>
-      We offer a wide range of high-performance products — from reverse horns and wiper motors to fuse sockets, lighting solutions, and combination switches — each tested for durability.
+      Founded with the vision to simplify procurement and supply of essential vehicle components, we offer a comprehensive range of high-performance products — from reverse horns and wiper motors to fuse sockets, lighting solutions, and combination switches. Every product is carefully selected and tested to meet the highest standards of performance and durability.
     </p>
     <p>
-      What sets us apart is our cost-effective pricing and personalized customer service. Whether you're a small workshop or a large fleet operator, Shri Hari Enterprises is your reliable partner for automotive electrical needs.
+      What sets us apart is our cost-effective pricing and personalized customer service. We believe in long-term partnerships and strive to deliver value beyond just the products — with consistent availability, fast response times, and seamless ordering experience.
     </p>
     <p>
-      <strong>Contact:</strong> 7798081480 <br/>
-      <strong>Email:</strong> shriharienterprises@gmail.com
+      Whether you are a small workshop, a large fleet operator, or a parts retailer, Shri Hari Enterprises is your reliable partner for automotive electrical needs.
     </p>
   </section>
 
+  <footer>
+    Contact us: +91 7066335993 | shriharienterprise@shop<br />
+    Address: CH.Sambhajinagar, Maharashtra - India
+  </footer>
 </body>
 </html>
