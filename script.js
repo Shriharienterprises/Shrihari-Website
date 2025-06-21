@@ -1,3 +1,4 @@
+
 let cart = [];
 
 function addToCart(productName, price) {
@@ -11,33 +12,37 @@ function addToCart(productName, price) {
 }
 
 function renderCart() {
-  const cartSection = document.getElementById("cart-preview");
-  const checkoutForm = document.getElementById("checkout-form");
+  const cartContent = document.getElementById("cart-content");
+  let total = 0;
+  let contentHTML = "<h2>Your Cart</h2><ul>";
 
   if (cart.length === 0) {
-    cartSection.innerHTML = "<p>Your cart is empty.</p>";
-    checkoutForm.style.display = "none";
-    return;
+    contentHTML += "<li>Your cart is empty.</li></ul>";
+  } else {
+    cart.forEach((item, index) => {
+      contentHTML += `<li>${index + 1}. ${item.productName} - Qty: ${item.quantity} - ₹${item.price}</li>`;
+      total += item.price * item.quantity;
+    });
+    contentHTML += `</ul><p><strong>Total Estimate: ₹${total}</strong></p>`;
+    contentHTML += `
+      <div>
+        <input type="text" id="user-name" placeholder="Your Name"><br>
+        <input type="text" id="user-contact" placeholder="Your WhatsApp Number"><br>
+        <textarea id="user-message" placeholder="Message/Requirement"></textarea><br>
+        <button onclick="sendWhatsAppInquiry()">Send via WhatsApp</button>
+      </div>`;
   }
 
-  let cartHTML = "<h3>Your Cart</h3><ul>";
-  let total = 0;
-
-  cart.forEach((item, index) => {
-    cartHTML += `<li>${index + 1}. ${item.productName} - Qty: ${item.quantity} - ₹${item.price}</li>`;
-    total += item.price * item.quantity;
-  });
-
-  cartHTML += `</ul><p><strong>Total Estimate: ₹${total}</strong></p>`;
-  cartSection.innerHTML = cartHTML;
-  checkoutForm.style.display = "block";
+  cartContent.innerHTML = contentHTML;
+  document.getElementById("cart-modal").style.display = "block";
 }
 
-function scrollToCart() {
-  const cartSection = document.getElementById("cart-preview");
-  if (cartSection) {
-    cartSection.scrollIntoView({ behavior: "smooth" });
-  }
+function openCartPopup() {
+  renderCart();
+}
+
+function closeCartPopup() {
+  document.getElementById("cart-modal").style.display = "none";
 }
 
 function sendWhatsAppInquiry() {
@@ -70,13 +75,3 @@ function sendWhatsAppInquiry() {
   const url = `https://wa.me/${phoneNumber}?text=${message}`;
   window.open(url, "_blank");
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const checkoutBtn = document.querySelector("button[onclick='scrollToCart()']");
-  if (checkoutBtn) {
-    checkoutBtn.addEventListener("click", () => {
-      renderCart();
-      document.getElementById("cart-preview").scrollIntoView({ behavior: "smooth" });
-    });
-  }
-});
