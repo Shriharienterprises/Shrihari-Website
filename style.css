@@ -1,103 +1,82 @@
-* {
-  box-sizing: border-box;
+
+body {
+  font-family: Arial, sans-serif;
+  background: white;
+  color: #FF9933; /* saffron */
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
 }
-body {
-  background: #ffffff;
-  color: #333;
+
+.header {
+  background: #e0f7ff;
   padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-header {
-  background: linear-gradient(to right, #ff9933, #9fe9fc);
+
+.logo {
+  height: 50px;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.slogan {
+  font-style: italic;
+}
+
+.intro {
+  padding: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #FF9933;
   color: white;
-  padding: 1rem 2rem;
-  text-align: center;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-}
-header h1 {
-  font-size: 2rem;
-  font-weight: bold;
-}
-nav a {
-  color: white;
-  margin: 0 1rem;
   text-decoration: none;
-  font-weight: 500;
+  border-radius: 5px;
 }
-nav a:hover {
-  text-decoration: underline;
+
+footer {
+  background: #f0f0f0;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
 }
+
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 0 1rem;
-}
-.product-card {
-  border: 2px solid #ff9933;
-  border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.product-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-.product-card p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-button {
-  padding: 0.5rem 1.2rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 6px;
-  background: #ff9933;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-button:hover {
-  background: #e67e22;
-}
-#cart-preview {
-  border: 2px solid #9fe9fc;
-  background: #f5faff;
-  padding: 1rem;
-  border-radius: 10px;
-  margin: 2rem auto;
-  max-width: 600px;
-}
-#checkout-form {
-  background: #fff5e6;
-  border-radius: 10px;
-  max-width: 600px;
-  margin: 2rem auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
   padding: 2rem;
-  border: 2px solid #ddd;
 }
-#checkout-form h3 {
-  margin-bottom: 1rem;
-}
-#checkout-form input,
-#checkout-form textarea {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-footer {
-  text-align: center;
+
+.product-card {
+  border: 2px solid #00bfff;
   padding: 1rem;
-  margin-top: 4rem;
-  background: #f1f1f1;
-  font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #ddd;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  overflow: auto;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.close-btn {
+  float: right;
 }
