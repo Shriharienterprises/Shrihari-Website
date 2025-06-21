@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom right, #ff9933, #d4eefe);
+  background: linear-gradient(to bottom right, #ff9933, #0f52ba);
   color: #333;
   margin: 0;
 }
@@ -45,7 +45,7 @@ header {
 
 .cart-modal {
   display: none;
-  position: fixed;
+  position: sticky;
   z-index: 9999;
   left: 0; top: 0;
   width: 100%; height: 100%;
@@ -59,7 +59,7 @@ header {
 }
 
 .cart-content {
-  background: linear-gradient(to right, #ff9933, #588bae);
+  background: linear-gradient(to right, #ff9933, #0f52ba);
   padding: 2rem;
   border-radius: 10px;
   max-width: 500px;
