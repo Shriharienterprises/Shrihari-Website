@@ -68,3 +68,13 @@ function startCheckout() {
 }
 
 document.getElementById("viewCartBtn").onclick = openCart;
+function updateCartButton() {
+  const cartBtn = document.getElementById("view-cart-btn");
+  cartBtn.textContent = `View Cart (${cart.length})`;
+}
+
+// call updateCartButton() every time item is added
+function addToCart(productName, price, quantity) {
+  cart.push({ productName, price, quantity });
+  updateCartButton();
+}
