@@ -1,12 +1,11 @@
 const cart = [];
 
 window.onload = function () {
-  const grid = document.getElementById("productGrid");
   displayProducts(products);
 
   document.getElementById("searchInput").addEventListener("input", function () {
-    const searchTerm = this.value.toLowerCase();
-    const filtered = products.filter(p => p.name.toLowerCase().includes(searchTerm));
+    const term = this.value.toLowerCase();
+    const filtered = products.filter(p => p.name.toLowerCase().includes(term));
     displayProducts(filtered);
   });
 };
@@ -32,9 +31,9 @@ function addToCart(index) {
   const quantity = parseInt(qtyInput.value);
   if (quantity > 0) {
     const product = products[index];
-    const existingIndex = cart.findIndex(item => item.productName === product.name);
-    if (existingIndex !== -1) {
-      cart[existingIndex].quantity += quantity;
+    const existing = cart.findIndex(item => item.productName === product.name);
+    if (existing !== -1) {
+      cart[existing].quantity += quantity;
     } else {
       cart.push({
         productName: product.name,
@@ -52,15 +51,20 @@ function openCart() {
   const cartItems = document.getElementById("cartItems");
   const form = document.getElementById("checkoutForm");
 
-  cartItems.innerHTML = cart.map((item, i) => `
-    <div class="cart-item">
-      <span>${i + 1}. ${item.productName} (₹${item.price})</span>
-      <input type="number" value="${item.quantity}" min="1" id="editQty-${i}" />
-      <button class="update-btn" onclick="updateCartItem(${i})">Update</button>
-      <button onclick="removeCartItem(${i})">X</button>
-    </div>
-  `).join("");
+  let total = 0;
+  cartItems.innerHTML = cart.map((item, i) => {
+    total += item.quantity * item.price;
+    return `
+      <div class="cart-item">
+        <span>${i + 1}. ${item.productName} (₹${item.price})</span>
+        <input type="number" value="${item.quantity}" min="1" id="editQty-${i}" />
+        <button class="update-btn" onclick="updateCartItem(${i})">Update</button>
+        <button onclick="removeCartItem(${i})">X</button>
+      </div>
+    `;
+  }).join("");
 
+  cartItems.innerHTML += `<hr><p style="font-weight:bold;">Total: ₹${total}</p>`;
   modal.classList.add("active");
   form.style.display = "block";
 }
