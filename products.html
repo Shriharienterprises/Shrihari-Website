@@ -3,56 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shri Hari Products</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script defer src="script.js"></script>
+  <title>Shri Hari Enterprises - Products</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="logo">Shri Hari Enterprises</div>
-    <p class="slogan">Where reliability meets excellence</p>
-    <nav class="nav-buttons">
-      <a href="index.html" class="btn">Home</a>
-      <a href="products.html" class="btn">Products</a>
-      <button onclick="toggleCart()" class="btn sticky-cart">View Cart (<span id="cart-count">0</span>)</button>
-    </nav>
+  <header>
+    <h1 class="logo">Shri Hari Enterprises</h1>
+    <div class="nav">
+      <a href="index.html" class="orange-btn">Home</a>
+      <button id="viewCartBtn" class="orange-btn">View Cart</button>
+    </div>
   </header>
 
   <main>
-    <section class="product-grid">
-      <!-- Product Card Template -->
-      <div class="product-card">
-        <h3>TT Horn</h3>
-        <p>₹410.00</p>
-        <input type="number" min="1" value="1" class="qty-input" id="qty-tt-horn"/>
-        <button onclick="addToCart('TT Horn', 410, 'qty-tt-horn')">Add to Cart</button>
-      </div>
-
-      <div class="product-card">
-        <h3>Fuse Socket with Wire</h3>
-        <p>₹45.00</p>
-        <input type="number" min="1" value="1" class="qty-input" id="qty-fuse"/>
-        <button onclick="addToCart('Fuse Socket with Wire', 45, 'qty-fuse')">Add to Cart</button>
-      </div>
-
-      <!-- Add more product cards similarly -->
-    </section>
-
-    <!-- Cart Section -->
-    <section id="cart" class="cart hidden">
-      <h2>Your Cart</h2>
-      <ul id="cart-items"></ul>
-      <p id="total"></p>
-      <button onclick="checkoutCart()" class="btn checkout">Checkout Cart</button>
-
-      <div id="buyer-details" class="hidden">
-        <h3>Your Details</h3>
-        <input type="text" id="buyer-name" placeholder="Your Name" required />
-        <input type="text" id="buyer-notes" placeholder="Order Notes" />
-        <input type="text" id="buyer-whatsapp" placeholder="WhatsApp Number" required />
-        <button onclick="sendToWhatsApp()" class="btn whatsapp">Send Inquiry on WhatsApp</button>
-      </div>
-    </section>
+    <h2>Our Products</h2>
+    <div class="product-grid" id="productGrid"></div>
   </main>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-content">
+      <h3>Your Cart</h3>
+      <div id="cartItems"></div>
+      <div id="checkoutForm" style="display: none;">
+        <h4>Enter Your Details</h4>
+        <input type="text" id="buyerName" placeholder="Your Name" required />
+        <input type="text" id="buyerDesc" placeholder="Short Description" required />
+        <input type="tel" id="buyerPhone" placeholder="Your WhatsApp Number" required />
+      </div>
+      <button onclick="startCheckout()" class="orange-btn">Checkout</button>
+      <button onclick="closeCart()" class="orange-btn">Close</button>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
