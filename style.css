@@ -1,8 +1,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: white;
-  color: #FF9933; /* saffron */
+  background: linear-gradient(135deg, #ff9933, #00bfff;
+  color: #FFFFFF;
   margin: 0;
   padding: 0;
 }
@@ -16,7 +16,7 @@ body {
 }
 
 .logo {
-  height: 50px;
+  height: 75px;
 }
 
 .title {
