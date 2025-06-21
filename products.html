@@ -15,7 +15,7 @@
   </div>
   <div class="nav">
     <a href="index.html" class="orange-btn">Home</a>
-    <button id="viewCartBtn" class="orange-btn">View Cart</button>
+    <button id="viewCartBtn" class="orange-btn sticky-cart">View Cart (0)</button>
   </div>
 </header>
 
@@ -25,23 +25,23 @@
   <div class="product-grid" id="productGrid"></div>
 </main>
 
-  <!-- Cart Modal -->
-  <div class="cart-modal" id="cartModal">
-    <div class="cart-content">
-      <h3>Your Cart</h3>
-      <div id="cartItems"></div>
-      <div id="checkoutForm" style="display: none;">
-        <h4>Enter Your Details</h4>
-        <input type="text" id="buyerName" placeholder="Your Name" required />
-        <input type="text" id="buyerDesc" placeholder="Short Description" required />
-        <input type="tel" id="buyerPhone" placeholder="Your WhatsApp Number" required />
-      </div>
-      <button onclick="startCheckout()" class="orange-btn">Checkout</button>
-      <button onclick="closeCart()" class="orange-btn">Close</button>
+<!-- Cart Modal -->
+<div class="cart-modal" id="cartModal">
+  <div class="cart-content">
+    <h3>Your Cart</h3>
+    <div id="cartItems"></div>
+    <div id="checkoutForm" style="display: none;">
+      <h4>Enter Your Details</h4>
+      <input type="text" id="buyerName" placeholder="Your Name" required />
+      <input type="text" id="buyerDesc" placeholder="Short Description" required />
+      <input type="tel" id="buyerPhone" placeholder="Your WhatsApp Number" required />
     </div>
+    <button onclick="startCheckout()" class="orange-btn">Checkout</button>
+    <button onclick="closeCart()" class="orange-btn">Close</button>
   </div>
+</div>
 
-  <script src="products.js"></script>
-  <script src="script.js"></script>
+<script src="products.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
