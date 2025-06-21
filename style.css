@@ -2,18 +2,24 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom right, #ffe6b3, #b3e6ff);
+  background: linear-gradient(to right, #ff9933, #e0f7fa);
   color: #333;
 }
 .logo {
   height: 40px;
   margin: 10px;
 }
-header, footer {
+header {
   padding: 10px;
   background: white;
   text-align: center;
 }
+footer {
+padding: 10px;
+  background: linear-gradient(to right, #ff9933, #e0f7fa) ;
+  text-align: center;
+}
+
 nav .btn {
   margin: 5px;
   padding: 10px 15px;
