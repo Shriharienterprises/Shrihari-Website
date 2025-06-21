@@ -1,7 +1,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ff9933, #00bfff;
+  background: linear-gradient(toright, #ff9933, #00bfff;
   color: #FFFFFF;
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@ body {
 }
 
 .logo {
-  height: 50px;
+  height: 25px;
 }
 
 .title {
