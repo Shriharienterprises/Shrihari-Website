@@ -1,282 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products - Shri Hari Enterprises</title>
+  <title>Products</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="sticky-header">
-    <div class="logo-title">
-      <img src="logo.png" alt="Logo" class="logo">
-      <div>
-        <h1 style="color:#ff9933;">Shri Hari Enterprises</h1>
-        <p style="font-size: 0.9rem;">Where Reliability Meets Excellence</p>
-      </div>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <button onclick="scrollToCart()">Checkout Cart 🛒</button>
-    </nav>
+  <header class="header">
+    <h1>Products</h1>
+    <button onclick="openCartPopup()">Checkout Cart</button>
   </header>
 
   <main class="product-grid">
-    
     <div class="product-card">
-      <h3>Reverse Horn</h3>
-      <p>Price: ₹165.0</p>
-      <input type="number" min="1" value="1" id="qty-Reverse_Horn" placeholder="Quantity">
-      <button onclick="addToCart('Reverse Horn', 165.0)">Add to Cart</button>
+      <h2>Sample Product</h2>
+      <p>Price: ₹100</p>
+      <input type="number" id="qty-Sample_Product" value="1" min="1">
+      <button onclick="addToCart('Sample Product', 100)">Add to Cart</button>
     </div>
-    
-    <div class="product-card">
-      <h3>TT Horn</h3>
-      <p>Price: ₹410.0</p>
-      <input type="number" min="1" value="1" id="qty-TT_Horn" placeholder="Quantity">
-      <button onclick="addToCart('TT Horn', 410.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Fuse Socket with wire</h3>
-      <p>Price: ₹45.0</p>
-      <input type="number" min="1" value="1" id="qty-Fuse_Socket_with_wire" placeholder="Quantity">
-      <button onclick="addToCart('Fuse Socket with wire', 45.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Tickly Wire</h3>
-      <p>Price: ₹4.2</p>
-      <input type="number" min="1" value="1" id="qty-Tickly_Wire" placeholder="Quantity">
-      <button onclick="addToCart('Tickly Wire', 4.2)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Indicator Assly. Commet</h3>
-      <p>Price: ₹180.0</p>
-      <input type="number" min="1" value="1" id="qty-Indicator_Assly._Commet" placeholder="Quantity">
-      <button onclick="addToCart('Indicator Assly. Commet', 180.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Indicator Assly. 2214</h3>
-      <p>Price: ₹145.0</p>
-      <input type="number" min="1" value="1" id="qty-Indicator_Assly._2214" placeholder="Quantity">
-      <button onclick="addToCart('Indicator Assly. 2214', 145.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Wiper Blade Push</h3>
-      <p>Price: ₹290.0</p>
-      <input type="number" min="1" value="1" id="qty-Wiper_Blade_Push" placeholder="Quantity">
-      <button onclick="addToCart('Wiper Blade Push', 290.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Wiper Arm Push</h3>
-      <p>Price: ₹305.0</p>
-      <input type="number" min="1" value="1" id="qty-Wiper_Arm_Push" placeholder="Quantity">
-      <button onclick="addToCart('Wiper Arm Push', 305.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Wiper Lock</h3>
-      <p>Price: ₹8.0</p>
-      <input type="number" min="1" value="1" id="qty-Wiper_Lock" placeholder="Quantity">
-      <button onclick="addToCart('Wiper Lock', 8.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Wiper Motor</h3>
-      <p>Price: ₹1850.0</p>
-      <input type="number" min="1" value="1" id="qty-Wiper_Motor" placeholder="Quantity">
-      <button onclick="addToCart('Wiper Motor', 1850.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Wire Bundle</h3>
-      <p>Price: ₹490.0</p>
-      <input type="number" min="1" value="1" id="qty-Wire_Bundle" placeholder="Quantity">
-      <button onclick="addToCart('Wire Bundle', 490.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Head Light Seal Beem</h3>
-      <p>Price: ₹200.0</p>
-      <input type="number" min="1" value="1" id="qty-Head_Light_Seal_Beem" placeholder="Quantity">
-      <button onclick="addToCart('Head Light Seal Beem', 200.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Head Light Inner Ring</h3>
-      <p>Price: ₹80.0</p>
-      <input type="number" min="1" value="1" id="qty-Head_Light_Inner_Ring" placeholder="Quantity">
-      <button onclick="addToCart('Head Light Inner Ring', 80.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Head Light Dom.</h3>
-      <p>Price: ₹435.0</p>
-      <input type="number" min="1" value="1" id="qty-Head_Light_Dom." placeholder="Quantity">
-      <button onclick="addToCart('Head Light Dom.', 435.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Sleev (Wire Cover) 10MM - 100 Mtr</h3>
-      <p>Price: ₹465.0</p>
-      <input type="number" min="1" value="1" id="qty-Sleev_(Wire_Cover)_10MM_-_100_Mtr" placeholder="Quantity">
-      <button onclick="addToCart('Sleev (Wire Cover) 10MM - 100 Mtr', 465.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Sleev (Wire Cover) 12MM - 100 Mtr</h3>
-      <p>Price: ₹70.0</p>
-      <input type="number" min="1" value="1" id="qty-Sleev_(Wire_Cover)_12MM_-_100_Mtr" placeholder="Quantity">
-      <button onclick="addToCart('Sleev (Wire Cover) 12MM - 100 Mtr', 70.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Battery Terminal</h3>
-      <p>Price: ₹12.0</p>
-      <input type="number" min="1" value="1" id="qty-Battery_Terminal" placeholder="Quantity">
-      <button onclick="addToCart('Battery Terminal', 12.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Glow 2441 Bulb</h3>
-      <p>Price: ₹23.0</p>
-      <input type="number" min="1" value="1" id="qty-Glow_2441_Bulb" placeholder="Quantity">
-      <button onclick="addToCart('Glow 2441 Bulb', 23.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Kiran Light</h3>
-      <p>Price: ₹128.0</p>
-      <input type="number" min="1" value="1" id="qty-Kiran_Light" placeholder="Quantity">
-      <button onclick="addToCart('Kiran Light', 128.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Headlight Bulb</h3>
-      <p>Price: ₹85.0</p>
-      <input type="number" min="1" value="1" id="qty-Headlight_Bulb" placeholder="Quantity">
-      <button onclick="addToCart('Headlight Bulb', 85.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>TV Type Side Mirror</h3>
-      <p>Price: ₹182.0</p>
-      <input type="number" min="1" value="1" id="qty-TV_Type_Side_Mirror" placeholder="Quantity">
-      <button onclick="addToCart('TV Type Side Mirror', 182.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Beading Mirror</h3>
-      <p>Price: ₹240.0</p>
-      <input type="number" min="1" value="1" id="qty-Beading_Mirror" placeholder="Quantity">
-      <button onclick="addToCart('Beading Mirror', 240.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Wiper Wheel Box</h3>
-      <p>Price: ₹65.0</p>
-      <input type="number" min="1" value="1" id="qty-Wiper_Wheel_Box" placeholder="Quantity">
-      <button onclick="addToCart('Wiper Wheel Box', 65.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Micro Relay</h3>
-      <p>Price: ₹40.0</p>
-      <input type="number" min="1" value="1" id="qty-Micro_Relay" placeholder="Quantity">
-      <button onclick="addToCart('Micro Relay', 40.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Push Pull Switch</h3>
-      <p>Price: ₹120.0</p>
-      <input type="number" min="1" value="1" id="qty-Push_Pull_Switch" placeholder="Quantity">
-      <button onclick="addToCart('Push Pull Switch', 120.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Arm Side Rod</h3>
-      <p>Price: ₹1850.0</p>
-      <input type="number" min="1" value="1" id="qty-Arm_Side_Rod" placeholder="Quantity">
-      <button onclick="addToCart('Arm Side Rod', 1850.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Combination Switch</h3>
-      <p>Price: ₹700.0</p>
-      <input type="number" min="1" value="1" id="qty-Combination_Switch" placeholder="Quantity">
-      <button onclick="addToCart('Combination Switch', 700.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Disel Tank Cap</h3>
-      <p>Price: ₹200.0</p>
-      <input type="number" min="1" value="1" id="qty-Disel_Tank_Cap" placeholder="Quantity">
-      <button onclick="addToCart('Disel Tank Cap', 200.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Roof Lamp</h3>
-      <p>Price: ₹55.0</p>
-      <input type="number" min="1" value="1" id="qty-Roof_Lamp" placeholder="Quantity">
-      <button onclick="addToCart('Roof Lamp', 55.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>3 Pin Holder</h3>
-      <p>Price: ₹2.5</p>
-      <input type="number" min="1" value="1" id="qty-3_Pin_Holder" placeholder="Quantity">
-      <button onclick="addToCart('3 Pin Holder', 2.5)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Fuse</h3>
-      <p>Price: ₹160.0</p>
-      <input type="number" min="1" value="1" id="qty-Fuse" placeholder="Quantity">
-      <button onclick="addToCart('Fuse', 160.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Headlamp Relay</h3>
-      <p>Price: ₹95.0</p>
-      <input type="number" min="1" value="1" id="qty-Headlamp_Relay" placeholder="Quantity">
-      <button onclick="addToCart('Headlamp Relay', 95.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Music Flasher</h3>
-      <p>Price: ₹170.0</p>
-      <input type="number" min="1" value="1" id="qty-Music_Flasher" placeholder="Quantity">
-      <button onclick="addToCart('Music Flasher', 170.0)">Add to Cart</button>
-    </div>
-    
-    <div class="product-card">
-      <h3>Wiper Blade Bolt</h3>
-      <p>Price: ₹99.0</p>
-      <input type="number" min="1" value="1" id="qty-Wiper_Blade_Bolt" placeholder="Quantity">
-      <button onclick="addToCart('Wiper Blade Bolt', 99.0)">Add to Cart</button>
-    </div>
-    
   </main>
 
-  <section id="cart-preview"></section>
-
-  <section id="checkout-form" style="display:none;">
-    <h3>Enter your details to complete inquiry</h3>
-    <input type="text" id="user-name" placeholder="Your Name">
-    <input type="text" id="user-contact" placeholder="Your WhatsApp Number">
-    <textarea id="user-message" placeholder="Any specific requirements..."></textarea>
-    <button onclick="sendWhatsAppInquiry()">Send via WhatsApp</button>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Shri Hari Enterprises. All rights reserved.</p>
-  </footer>
+  <div id="cart-modal" class="cart-modal">
+    <button onclick="closeCartPopup()" class="close-btn">Close</button>
+    <div id="cart-content"></div>
+  </div>
 </body>
 </html>
