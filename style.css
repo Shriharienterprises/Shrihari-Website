@@ -1,43 +1,98 @@
-body {
-  font-family: Arial, sans-serif;
+body.gradient-bg {
+  background: linear-gradient(to right, #f78e2c, #9fe9fc);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to right, #ff9933, #e0f7fa);
-  color: #333;
 }
-.logo {
-  height: 40px;
-  margin: 10px;
-}
-header {
+
+.header {
+  background-color: #fff;
+  color: #f78e2c;
   padding: 10px;
-  background:  linear-gradient(to right, #ff9933, #e0f7fa);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-footer {
-padding: 10px;
-  background: linear-gradient(to right, #ff9933, #e0f7fa) ;
+
+.logo {
+  height: 50px;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f78e2c;
+}
+
+.slogan {
+  font-size: 14px;
+  color: white;
+}
+
+nav .nav-link {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.about, .contact {
+  padding: 20px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
+}
+
+.product-card {
+  background-color: white;
+  color: #333;
+  border: 2px solid #f78e2c;
+  border-radius: 10px;
+  padding: 15px;
+  width: 220px;
   text-align: center;
 }
 
-nav .btn {
-  margin: 5px;
-  padding: 10px 15px;
-  background: orange;
-  color: white;
+.product-card h3 {
+  margin: 0 0 10px 0;
+}
+
+.product-card button {
+  background-color: #f78e2c;
   border: none;
+  color: white;
+  padding: 10px 16px;
   cursor: pointer;
+  border-radius: 6px;
 }
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
+
+.cart-block {
+  background-color: #ffffff20;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
 }
-.product-card {
-  background: white;
+
+.cart-block input {
+  width: 100%;
+  margin: 8px 0;
   padding: 10px;
-  border: 1px solid orange;
   border-radius: 5px;
-  text-align: center;
+  border: none;
+}
+
+.cart-block button {
+  background-color: #ff6600;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
 }
