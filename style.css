@@ -11,7 +11,7 @@ body {
 }
 header {
   padding: 10px;
-  background: white;
+  background:  linear-gradient(to right, #ff9933, #e0f7fa);
   text-align: center;
 }
 footer {
