@@ -27,10 +27,17 @@ body.gradient-bg {
 
 .slogan {
   font-size: 14px;
-  color: white;
+  color: #4b006e;
 }
-
-nav .nav-link {
+.nav-box {
+  background-color: #ff9933;
+  padding: 10px 20px;
+  border-radius: 12px;
+  display: inline-block;
+  backdrop-filter: blur(4px);
+  box-shaddow:0 0 10px rgba(0,0,0,0,1);
+}
+.nav-link,#cart-button {
   margin: 0 10px;
   text-decoration: none;
   color: white;
