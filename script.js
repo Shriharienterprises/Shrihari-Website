@@ -13,6 +13,8 @@ window.onload = function () {
     `;
     grid.appendChild(card);
   });
+
+  document.getElementById("view-cart-btn").onclick = openCart;
 };
 
 function addToCart(index) {
@@ -25,7 +27,13 @@ function addToCart(index) {
       price: products[index].price
     });
     alert(`${products[index].name} added to cart`);
+    updateCartButton();
   }
+}
+
+function updateCartButton() {
+  const cartBtn = document.getElementById("view-cart-btn");
+  cartBtn.textContent = `View Cart (${cart.length})`;
 }
 
 function openCart() {
@@ -65,16 +73,4 @@ function startCheckout() {
 
   const url = `https://wa.me/917066335993?text=${message}`;
   window.open(url, "_blank");
-}
-
-document.getElementById("viewCartBtn").onclick = openCart;
-function updateCartButton() {
-  const cartBtn = document.getElementById("view-cart-btn");
-  cartBtn.textContent = `View Cart (${cart.length})`;
-}
-
-// call updateCartButton() every time item is added
-function addToCart(productName, price, quantity) {
-  cart.push({ productName, price, quantity });
-  updateCartButton();
 }
