@@ -59,7 +59,7 @@ header {
 }
 
 .cart-content {
-  background: #fff;
+  background: linear-gradient(to right, #ff9933, #588bae);
   padding: 2rem;
   border-radius: 10px;
   max-width: 500px;
