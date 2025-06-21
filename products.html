@@ -10,17 +10,22 @@
   <!-- Sticky cart button -->
   <button id="view-cart-btn">View Cart (0)</button>
 
-  <header>
+<header>
+  <div>
     <h1 class="logo">Shri Hari Enterprises</h1>
-    <div class="nav">
-      <a href="index.html" class="orange-btn">Home</a>
-    </div>
-  </header>
+    <p class="slogan">Reliable · Affordable · Trusted Partner</p>
+  </div>
+  <div class="nav">
+    <a href="index.html" class="orange-btn">Home</a>
+    <button id="viewCartBtn" class="orange-btn">View Cart</button>
+  </div>
+</header>
 
-  <main>
-    <h2>Our Products</h2>
-    <div class="product-grid" id="productGrid"></div>
-  </main>
+<main>
+  <h2>Our Products</h2>
+  <input type="text" id="searchInput" placeholder="Search products..." />
+  <div class="product-grid" id="productGrid"></div>
+</main>
 
   <!-- Cart Modal -->
   <div class="cart-modal" id="cartModal">
