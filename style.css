@@ -79,3 +79,41 @@ header {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
+.slogan {
+  color: #623bbe;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+#searchInput {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.6rem;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+}
+.cart-item input[type="number"] {
+  width: 60px;
+}
+.cart-item button {
+  background: #f44336;
+  color: #fff;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cart-item button.update-btn {
+  background: #4caf50;
+}
